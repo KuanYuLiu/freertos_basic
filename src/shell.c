@@ -283,9 +283,9 @@ void newtask_command(int n, char*argv[])
 
 	  xTaskCreate( vTaskCode, (signed portCHAR *)
 		      "NewTask",
-	              150,/*stack size*/
+	              512,/*stack size*/
 	              &ucParameterToPass,
-	              tskIDLE_PRIORITY, 
+	              tskIDLE_PRIORITY+1, /*add new task priority*/
                       &xHandle );
 	 configASSERT( xHandle );
    
